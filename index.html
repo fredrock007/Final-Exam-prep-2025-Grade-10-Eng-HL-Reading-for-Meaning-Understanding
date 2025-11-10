@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Comprehension, Visual Text Analysis and Advertising Analysis – Grade 10 HL Final Exam – Whiteboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { background: #dcdcdc; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; padding: 50px; }
-    .whiteboard { width: 960px; background: #ffffff; border: 30px solid #c0c0c0; border-radius: 12px; box-shadow: 20px 20px 40px rgba(0,0,0,0.6); padding: 40px; transform: perspective(1000px) rotateX(1deg); position: relative; }
-    .section { margin-bottom: 40px; border-bottom: 6px solid black; padding-bottom: 15px; }
-    h2 { color: #0074a8; display: flex; align-items: center; gap: 10px; }
-    p, li { font-size: 16px; line-height: 1.6; color: #333; }
-    ul, ol { padding-left: 20px; }
-    iframe { width: 100%; height: 500px; border: 2px solid #0074a8; border-radius: 8px; margin-top: 10px; }
-    .answer-hidden { display: none; background: #fff5cc; color: #004085; padding: 8px; margin-top: 6px; border-left: 6px solid #ffc107; border-radius: 4px; font-weight: bold; }
-    button { background-color: #0074a8; color: white; border: none; border-radius: 8px; padding: 10px 20px; cursor: pointer; font-size: 16px; margin-top: 10px; }
-    button:hover { background-color: #005f87; }
-    .lock-icon { margin-right: 8px; }
+    body { background:#dcdcdc; font-family:'Segoe UI', system-ui, -apple-system, Arial, sans-serif; display:flex; justify-content:center; padding:16px; }
+    .whiteboard { width:min(960px, 100%); background:#fff; border:24px solid #c0c0c0; border-radius:12px; box-shadow:20px 20px 40px rgba(0,0,0,.6); padding:24px; transform:perspective(1000px) rotateX(1deg); position:relative; }
+    .section { margin-bottom:28px; border-bottom:6px solid #000; padding-bottom:12px; }
+    h2 { color:#0074a8; display:flex; align-items:center; gap:10px; margin:0 0 8px; }
+    p, li { font-size:16px; line-height:1.6; color:#333; }
+    ul, ol { padding-left:20px; }
+    iframe { width:100%; height:480px; border:2px solid #0074a8; border-radius:8px; margin-top:10px; }
+    .answer-hidden { display:none; background:#fff5cc; color:#004085; padding:8px; margin-top:6px; border-left:6px solid #ffc107; border-radius:4px; font-weight:bold; }
+    button { background:#0074a8; color:#fff; border:none; border-radius:8px; padding:10px 20px; cursor:pointer; font-size:16px; margin-top:10px; }
+    button:active { transform:translateY(1px); }
+    button:hover { background:#005f87; }
+    .lock-icon { margin-right:8px; }
+    .countdown-wrap { display:flex; flex-wrap:wrap; align-items:center; gap:10px; background:#e8f4ff; border:2px solid #0074a8; border-radius:10px; padding:10px 12px; }
+    .countdown-time { font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight:700; }
+    .badge { display:inline-block; background:#0074a8; color:#fff; border-radius:999px; padding:4px 10px; font-size:12px; font-weight:600; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+    @keyframes pulse { 0% { box-shadow:0 0 0 0 rgba(0,116,168,.35);} 70% { box-shadow:0 0 0 12px rgba(0,116,168,0);} 100% { box-shadow:0 0 0 0 rgba(0,116,168,0);} }
+    .pulse { animation:pulse 2.5s infinite; }
+    @media (max-width:600px){ .whiteboard{ border-width:14px; padding:16px; } iframe{ height:420px; } }
+    noscript { display:block; background:#fff3cd; border-left:6px solid #ffec99; padding:10px; border-radius:6px; }
   </style>
 </head>
 <body>
@@ -159,22 +169,61 @@
         <li>Give one word to describe the expression on Calvin’s face in the first three frames.
           <div class="answer-hidden">Strained / pained / tense.</div>
         </li>
-        <li>How does Calvin’s body language in the last frame affirm what he is saying?
-          <div class="answer-hidden">He smiles, touches his arm; visuals confirm his “gratifying” claim.</div>
-        </li>
-        <li>Explain Calvin’s reasoning.
-          <div class="answer-hidden">He equates effort with success; inflates counts to feel satisfied.</div>
-        </li>
-        <li>This comic strip is an example of: sarcasm, satire or slapstick? Choose and justify.
-          <div class="answer-hidden">Satire — humorous critique using sports terms/context.</div>
-        </li>
-        <li>Discuss the play on words in the cartoon and how it contributes to the humour.
-          <div class="answer-hidden">Athletics terminology used ironically with SA crime context → humour.</div>
-        </li>
       </ol>
     </div>
 
-    <!-- HOMEWORK -->
+    <!-- 🏠 Homework Section -->
+          <div class="answer-hidden">Strained / pained / tense.</div>
+
+    <script>
+window.addEventListener('DOMContentLoaded', () => {
+  const timeZone = 'Africa/Johannesburg';
+  function nowInSAST() {
+    return new Date(new Date().toLocaleString('en-GB', { timeZone }));
+  }
+  function releaseTimeToday() {
+    const d = nowInSAST();
+    d.setHours(15, 0, 0, 0);
+    return d;
+  }
+  const correctPassword = 'Joshu@2025';
+  const answers = document.querySelectorAll('.answer-hidden');
+  function revealAnswers() { answers.forEach(n => n.style.display = 'block'); }
+  const showBtn = document.getElementById('showAnswersBtn');
+  if (showBtn) {
+    showBtn.addEventListener('click', () => {
+      const pass = document.getElementById('teacherPass').value || '';
+      if (pass === correctPassword) { revealAnswers(); setReleasedUI(); }
+      else { alert('Incorrect password.'); }
+    });
+  }
+  const clockEl = document.getElementById('countdownClock');
+  const textEl  = document.getElementById('countdownText');
+  const srEl    = document.getElementById('srCountdown');
+  const release = releaseTimeToday();
+  function setReleasedUI() {
+    textEl.innerHTML = '<strong>Answers are now live</strong> — you may compare and correct your work.';
+    document.getElementById('releaseSection').classList.remove('pulse');
+  }
+  function updateCountdown() {
+    const now = nowInSAST();
+    const diff = release - now;
+    if (diff <= 0) { revealAnswers(); setReleasedUI(); return true; }
+    const totalSec = Math.floor(diff / 1000);
+    const hrs = String(Math.floor(totalSec / 3600)).padStart(2, '0');
+    const mins = String(Math.floor((totalSec % 3600) / 60)).padStart(2, '0');
+    const secs = String(totalSec % 60).padStart(2, '0');
+    const hhmmss = `${hrs}:${mins}:${secs}`;
+    if (clockEl) clockEl.textContent = hhmmss;
+    if (srEl) srEl.textContent = `Answers release in ${hrs} hours ${mins} minutes ${secs} seconds.`;
+    return false;
+  }
+  if (!updateCountdown()) {
+    const iv = setInterval(() => { if (updateCountdown()) clearInterval(iv); }, 1000);
+  }
+});
+</script>
+    <!-- 🏠 Homework Section -->
     <div class="section">
       <h2>🏠 Homework — Text H (Language Structures)</h2>
       <ol>
@@ -205,61 +254,30 @@
       </ol>
     </div>
 
-    <!-- TEACHER ACCESS -->
+    <!-- ⏳ Answer Release Countdown (Moved to Bottom) -->
+    <div class="section" id="releaseSection" aria-live="polite">
+      <h2>⏳ Answer Release Countdown</h2>
+      <div class="countdown-wrap pulse">
+        <span class="badge">Learners</span>
+        <span id="countdownText">
+          Answers will be released at <strong>3:00 PM (SAST)</strong>.
+          <span class="countdown-time" id="countdownClock">--:--:--</span>
+        </span>
+        <span class="sr-only" id="srCountdown">Countdown to answer release.</span>
+      </div>
+      <p style="margin:8px 0 0">
+        When answers appear, check your work against them and make the necessary corrections.
+      </p>
+    </div>
+
+    <!-- 🔒 Teacher Access (Moved to Bottom) -->
     <div class="section">
       <h2>🔒 Teacher Access</h2>
       <p>Enter the password to reveal all answers (hidden by default for learners).</p>
       <label for="teacherPass"><span class="lock-icon">🔑</span>Password:</label>
-      <input id="teacherPass" type="password" placeholder="Enter password">
-      <button id="showAnswersBtn">Reveal Answers</button>
+      <input id="teacherPass" type="password" inputmode="text" autocomplete="off" placeholder="Enter password" />
+      <button id="showAnswersBtn" type="button">Reveal Answers</button>
     </div>
-  </div>
 
-  <script>
-    const correctPassword = 'Joshu@2025';
-    function revealAnswers() {
-      document.querySelectorAll('.answer-hidden').forEach(n => n.style.display = 'block');
-    }
-
-    // Time-based release: 15:00 (3 PM) South Africa Standard Time (Africa/Johannesburg, UTC+2)
-    const timeZone = 'Africa/Johannesburg';
-    function nowInSAST() {
-      return new Date(new Date().toLocaleString('en-GB', { timeZone }));
-    }
-    function releaseTimeToday() {
-      const d = nowInSAST();
-      d.setHours(15, 0, 0, 0);
-      d.setMilliseconds(0);
-      return d;
-    }
-
-    // If current SAST time is past release time, reveal answers immediately for scholars.
-    function checkRelease() {
-      const now = nowInSAST();
-      const release = releaseTimeToday();
-      if (now >= release) revealAnswers();
-    }
-
-    // Check on load and every 30 seconds until release
-    checkRelease();
-    const releaseChecker = setInterval(() => {
-      const now = nowInSAST();
-      const release = releaseTimeToday();
-      if (now >= release) {
-        revealAnswers();
-        clearInterval(releaseChecker);
-      }
-    }, 30000);
-
-    // Teacher password access (works at any time)
-    document.getElementById('showAnswersBtn').addEventListener('click', () => {
-      const pass = document.getElementById('teacherPass').value;
-      if (pass === correctPassword) {
-        revealAnswers();
-      } else {
-        alert('Incorrect password.');
-      }
-    });
-  </script>
-</body>
+  </body>
 </html>
